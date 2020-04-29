@@ -37,7 +37,7 @@
 %% The amssymb package provides various useful mathematical symbols
 \usepackage{amssymb}
 \usepackage{float}
-\usepackage{amsmath}
+%\usepackage{amsmath}
 \usepackage{eqnarray}
 %\usepackage{hyperref}
 
@@ -68,6 +68,7 @@
 %% natbib.sty is loaded by default. However, natbib options can be
 %% provided with \biboptions{...} command. Following options are
 %% valid:
+
 \begin{document}
 %%   round  -  round parentheses are used (default)
 %%   square -  square brackets are used   [option]
@@ -173,37 +174,41 @@ The ongoing, third observing run, began on April 1, 2019. On average, O3 has wit
 
 
 Noise from several different sources limits the sensitivity of the strain data at different frequencies. 
-While Shot noise is dominant at frequencies above 300 Hz~\cite{tjthesis}, ground motion is the major source of noise below 10 Hz which can get upconverted and affect the higher frequency band of the detectors. In addition to the stationary noise that includes quantum noise, suspension noise and seismic noise, short duration noise transients also known as glitches can affect the sensitivity of the detectors \cite{transientpaper}. These noise transients can be due to high ground motion, electronic malfunction or other reasons, not well-understood \cite{noisepaper,Cabero_2019}.
-
-In this paper, we focus on the type of noise due to scattered light which impacts the gravitational strain in 10 Hz to 120 Hz frequency band.  Identifying and reducing the amount of scattering is imperative to increase the sensitivity of the detectors. 
+While Shot noise is dominant at frequencies above 300 Hz~\cite{tjthesis}, ground motion is the major source of noise below 10 Hz which can affect the higher frequency band of the detectors. In addition to quantum noise, suspension noise and seismic noise, short duration noise transients also known as glitches can affect the sensitivity of the detectors \cite{transientpaper}. These noise transients can be due to high ground motion, electronic malfunction or other reasons, not well-understood \cite{noisepaper,Cabero_2019}. In this paper, we focus on the type of noise due to scattered light which impacts the gravitational strain in 10 Hz to 120 Hz frequency band.  Identifying and reducing the amount of scattering is imperative to increase the sensitivity of the detectors. 
  
-The LIGO end station housing the end test masses <ref etm optic> of the two interferometer arms is shown in Fig. <bla>. Each station has a reference seismometer on the floor to monitor ambient seismic noise. The vacuum system has at the end of the 4km arms large vacuum chambers housing the test masses. The test mass and a transmitted light monitoring table are suspended from a two-stage seismic isolation table <ref isi>. The test mass has a double chain, four-layered suspension for additional isolation <ref quad>. The quadruple suspension chain behind the quadruple test mass suspension is called the reaction chain. There is additional hardware around the suspension, most importantly the "cage": a structure hard bolted to the seismic isolation table which serves both as a reference and as a safety measure for protecting against large motions that could damage the suspension.
+The LIGO end station housing the end test masses <ref etm optic> of the two interferometer arms is shown in Fig.~\ref{fig:schematic}. Each station has a reference seismometer on the floor to monitor ambient seismic noise. The vacuum system has at the end of the 4km arms large vacuum chambers housing the test masses. The test mass and a transmitted light monitoring table are suspended from a two-stage seismic isolation table \cite{Matichard_2015}. The test mass has a double chain, four-layered suspension for additional isolation \cite{Aston_2012}. The quadruple suspension chain behind the quadruple test mass suspension is called the reaction chain. There is additional hardware around the suspension, most importantly the "cage": a structure hard bolted to the seismic isolation table which serves both as a reference and as a safety measure for protecting against large motions that could damage the suspension.
 
-The suspension for the test mass uses Optical Shadow sensor and Magnetic actuators (OSEM) <ref osem> at the top three stages as well as an electrostatic drive (ESD) at the test mass stage <ref quad>. The OSEMs at the top stages measure relative motion and can produce a force (actuate) between the cage and the two chains. For the upper-intermediate mass (UIM) and penultimate (PUM) mass stages, the OSEMs measure and actuate in-between the two chains. The ESD is formed by the installation of 5 gold traces on reaction mass. Applying a voltage on the gold traces, and electrostatic force can drive the test mass.  The reaction mass is a hollow cylinder to allow the transmitted beam to pass without encountering additional optical surfaces <ref aerm>.
+The suspension for the test mass uses Optical Shadow sensor and Magnetic actuators (OSEM)  at the top three stages as well as an electrostatic drive (ESD) at the test mass stage. The OSEMs at the top stages measure relative motion and can produce a force (actuate) between the cage and the two chains. For the upper-intermediate mass (UIM) and penultimate (PUM) mass stages, the OSEMs measure and actuate in-between the two chains. The ESD is formed by the installation of 5 gold traces on reaction mass. Applying a voltage on the gold traces, and electrostatic force can drive the test mass.  The reaction mass is a hollow cylinder to allow the transmitted beam to pass without encountering additional optical surfaces <ref aerm>.
 
-The transmission monitor is a double suspension with OSEM's at the top stage, measuring motion with respect to its cage<ref tms>. It houses a telescope to reduce the large beam size coming from the arm. The LIGO end test masses have a transmission of approximately 4ppm, so for an arm power of 250kW as in O3a for the Livingston detector, the transmitted beam would be about 1W. $95\%$ of this light is dumped and $5\%$ is split about equally between two quadrant photodiodes, named A and B. 
+The transmission monitor is a double suspension with OSEM's at the top stage, measuring motion with respect to its cage <ref tms>. It houses a telescope to reduce the large beam size coming from the arm. The LIGO end test masses have a transmission of approximately 4ppm, so for an arm power of 250kW as in O3a for the Livingston detector, the transmitted beam would be about 1W. $95\%$ of this light is dumped and $5\%$ is split about equally between two quadrant photodiodes, named A and B. 
 
-In order to keep the arms on resonance, LIGO feeds back the differential arm signal to one of the end test masses, at multiple stages <ref Den paper>, with a bandwidth of about 60 Hz. As such, the test mass chain moves much more relative to the local surfaces, since it has to "account" for the motion of all other test masses. The main pendulum frequency of the quadruple suspension is around 0.45 Hz which means that for drives applied at lower frequencies, the entire chain will move together. The dominant ground motion to be fed back is indeed below this frequency. Furthermore, because most of the drive is applied in between the chains, the test mass chain moves twice as much relative to the reaction chain. The test mass motion relative to other surfaces like the transmission monitor, the cage or the vacuum chamber walls is half of the motion measured by the OSEM's at the UIM or PUM level, below 0.45 Hz.
+In order to keep the arms on resonance, LIGO feeds back the differential arm signal to one of the end test masses, at multiple stages \cite{Martynov_2016}, with a bandwidth of about 60 Hz. As such, the test mass chain moves much more relative to the local surfaces, since it has to``account" for the motion of all other test masses. The main pendulum frequency of the quadruple suspension is around 0.45 Hz which means that for drives applied at lower frequencies, the entire chain will move together. The dominant ground motion to be fed back is indeed below this frequency. Furthermore, because most of the drive is applied in between the chains, the test mass chain moves twice as much relative to the reaction chain. The test mass motion relative to other surfaces like the transmission monitor, the cage or the vacuum chamber walls is half of the motion measured by the OSEM's at the UIM or PUM level, below 0.45 Hz.
 
- 
-The paper is composed as follows. In Sec \ref{scatteringnoise}, we discuss scattering noise and two primary methods used for its identification. Scattering noise during O3 is addressed in Sec   \ref{scatino3}. In Sec \ref{m0r0_scattering} we provide a mathematical treatment of Slow scattering, a sub-population of the light scattering and discuss the source of the noise. In Sec \ref{rzero} we develop a method to mitigate the slow scattering noise discussed in Sec \ref{m0r0_scattering}. Section \ref{transmon_scattering} introduces another source of slow scattering observed during O3. In Sec \ref{transmonwitness} we discuss a method to identify scattering times. Finally we summarize the paper in Sec \ref{summary}. 
+Each LIGO detector is equipped with hundreds of thousands of auxiliary sensors. Many of these channels are not sensitive to gravitational waves and are used to identify various environmental and physical couplings to the detector.
+Ground motion in various frequency bands, for example, is measured by seismometers located at end stations and corner station. These seismometers record ground motion in X, Y and Z direction in the frequency range from 0.03 Hz to 30 Hz subdivided into smaller bands. Earthquakes shake the ground in $0.03-0.1$ Hz band while anthropogenic noise and ground motion due to trains show up in $1-3$ Hz region. As we discuss later, the output of these sensors is used to look for correlations with noise transients in the strain data.
+
+The paper is composed as follows. In Sec \ref{scatteringnoise}, we discuss scattering noise and two primary methods used for its identification. Scattering noise during O3 is addressed in Sec   \ref{scatino3}. In Sec. \ref{m0r0_scattering} we provide a mathematical treatment of Slow scattering, a sub-population of the light scattering and discuss the source of the noise. In Sec. \ref{rzero} we develop a method to mitigate the slow scattering noise discussed in Sec. \ref{m0r0_scattering}. Section \ref{transmon_scattering} introduces another source of slow scattering observed during O3. In Sec. \ref{transmonwitness} we discuss a method to identify scattering times. Finally we summarize the paper in Sec. \ref{summary}. 
 
  
 \section{Scattering Noise.}\label{scatteringnoise}
 Tiny imperfections on the surfaces of mirrors in the interferometer cause a small amount of light to scatter out of the main beam. This scattered light can then reflect from surfaces such as the chamber walls that are not well seismically isolated, back to the test mass. Upon recombining with the main beam, the scattered light introduces noise in the gravitational wave signal. The amplitude of the noise depends on how much light recombines with the main beam, and the upper frequency depends on the relative motion.
 
 The motion of the scatterer introduces an additional phase in the field reflected from its surface. Consider a small fraction $f$ of the total light power that gets scattered back to the field in the arms, from a scattering surface located behind the end test mass (ETM). This light will acquire an additional phase due to the path length modulation caused by the relative motion between the end test mass and the scatterer. The resulting phase noise can be formulated as:
-\begin{align}
-    h_{scat} &= K\sqrt{f}\sin\left({\phi})\right \label{eq:1} \\
-    {\phi}(t) &= \frac{4{\pi}}{{\lambda}}\left|{ x_{0} + {\delta} x_{sc}(t)}\right| \label{eq:2}
-\end{align}
+\begin{eqnarray}
+      h_{scat} & = & K\sqrt{f}\sin({\phi}) \label{eq:1}
+\end{eqnarray}
+
+\begin{eqnarray}
+    {\phi}(t) & = & \frac{4{\pi}}{{\lambda}}\left|{ x_{0} + {\delta} x_{sc}(t)}\right| \label{eq:2}
+\end{eqnarray}
+    
 K is the coupling between motion of the scattering surface and strain while $\delta x_{sc}$ is the time-dependent displacement of the scattering surface which is added to the static path $x_{0}$~\cite{scatvirgo}. 
 \par
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{scatindarmlrs.eps}
-    \caption{Scattering noise shows up as arches in the time-frequency spectrograms.}
+    \caption{Scattering noise shows up as arches in the time-frequency spectrograms. The stacked arches suggests a scatter path that involves multiple reflections of stray light between the test mass and the scatterer.}
     \label{fig:scat}
 \end{figure}
 
@@ -229,20 +234,20 @@ GravitySpy is an image recognition tool that uses machine learning to classify t
 
 
 \subsection{Monitoring motion of possible scattering mirrors.}\label{osems}
-Another way of identifying the noise is by monitoring the motion of optics using optical sensors electromagnetic actuators (OSEMSs) and then correlating this motion with the presence of glitches in the gravitational wave strain channel in 10 Hz - 60 Hz frequency band.
+Another way of identifying the noise is by monitoring the motion of OSEMS and then correlating this motion with the presence of glitches in the gravitational wave strain channel in 10 Hz - 60 Hz frequency band.
 
 This is accomplished using an algorithm called - \textbf{gwdetchar-scattering}~\cite{alex_l_urban_2019_3526829}. An optic is considered a good witness if its motion has a strong time correlation with the scattering glitches. The list of OSEMs we look for evidence of scattering in is not constant. It is updated with channels getting added or removed based on how good a witness of scattering they are. For each sensor in this list, the gwdetchar-scattering code creates segments of the form (startime, endtime) during which the motion in optic crosses a certain frequency threshold.  The code then looks for time coincidences between these segments and glitches in h(t). Efficiency is defined as the percentage of triggers in h(t) channel that is captured by these segments while the deadtime is the duration of all the segments for an optic as a percentage of total observing time. Scattering evidence is considered to be ``strong" if the ratio of efficiency over deadtime is greater than 2 and ``weak" if it is less than 2. 
 
 \subsection{Comparing the two methods}
-GravitySpy, even though does not provide any information with regards to where the scatterer might be located, identifies a larger subset of scattering triggers compared to that identified by motion in OSEMs. On the other hand, optics motion as discussed previously can be a more direct method of locating the source of scattering noise since it can identify which mirror is moving with the velocity required. It thus makes more sense to see if we can increase the overall ``Efficiency'' of \textbf{gwdetchar-scattering} by adding better scattering witnesses to the algorithm. Later in section \ref{transmonwitness}, we explore such a scattering witness that can be used to identify the scattering noise. A method based on Hilbert Huang transform has also been developed to catch scattering surfaces \cite{hhtransform}. 
+GravitySpy, even though does not provide any information with regards to where the scatterer might be located, identifies a larger subset of scattering triggers compared to that identified by motion in OSEMs. On the other hand, optics motion as discussed previously can be a more direct method of locating the source of scattering noise since it can identify which mirror is moving with the velocity required. It thus makes more sense to see if we can increase the overall ``Efficiency'' of \textbf{gwdetchar-scattering} by adding better scattering witnesses to the algorithm. Later in Sec. \ref{transmonwitness}, we explore such a scattering witness that can be used to identify the scattering noise. A method based on Hilbert Huang transform has also been developed to catch scattering surfaces \cite{hhtransform}. 
+\par
 
-\subsection{Ground motion auxiliary sensors.}
-Each LIGO detector is equipped with hundreds of thousands of auxiliary sensors. Many of these channels are not sensitive to gravitational waves and are used to identify various environmental and physical couplings to the detector.
-Ground motion in various frequency bands, for example, is measured by seismometers located at end stations and corner station. These seismometers record ground motion in X, Y and Z direction in the frequency range from 0.03 Hz to 30 Hz subdivided into smaller bands. Earthquakes shake the ground in $0.03-0.1$ Hz band while anthropogenic noise and ground motion due to trains show up in $1-3$ Hz region. As we discuss later, the output of these sensors is used to look for correlations with noise transients in the strain data.
-%are used to measure the ground motion in various frequency bands. 
-\quad
-
-
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10cm]{scatshelf4.png}
+    \caption{ Depending on the ground motion, scattering create shelves in h(t) spectrum that are visible in the range 10 Hz to 120 Hz. The blue curve shows the h(t) spectrum for 20 seconds of data from January 6, 2020, a day with extremely high microseism compared against a quieter day.}
+    \label{fig:scatshelf1}
+\end{figure}
 \section{Scattering in O3.}\label{scatino3}
 The BNS range of the detectors, which is the average astrophysical range for binary star mergers, increased to 110-140 Mpc in O3, from around 80-100 Mpc in O2.~\cite{prospect} Due to this improvement in sensitivity, the same noise now surfaces with higher SNR.
 Consequently, we see a lot more scattering arches in O3. An interesting feature of scattering in O3 is the presence of two different populations of scattering glitches, so-called the slow scattering and the fast scattering. The glitch morphology of the slow scattering is the more familiar arch in time-frequency plane. The fast scattering triggers are more localized in time. GravitySpy currently does not distinguish between fast and slow scattering. Slow arches during O3a  typically appeared with an SNR of 15 or higher. SNR in the range of 14-16 serves as a decent threshold to separate the Slow and Fast scattering glitches in O3a. In this analysis, we have used the SNR threshold of 15 to separate the two populations of scattering glitches during O3a.
@@ -252,38 +257,38 @@ Consequently, we see a lot more scattering arches in O3. An interesting feature 
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
          \includegraphics[width= \textwidth]{slowarch.png}
-         \caption{Slow scattering triggers.}
+         \caption{Slow scattering arches.}
          \label{fig:slowscat}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
-         \includegraphics[width =\textwidth,height=4cm]{fastscat6.png}
-         \caption{Fast scattering triggers.}
-         \label{fig:fastscat}
+         \includegraphics[width =\textwidth,height=4cm]{tssus1.png}
+         \caption{PUM stage motion during light scattering.}
+         \label{fig:timeseriessus}
          
     
     \end{subfigure}
-    \caption{Slow and Fast scattering in O3a.}
-    \label{fig:fastslowscat}
+    \caption{The first image shows time-frequency representation of  slow scattering arches. This is an unusual number of arches due to extremely high ground motion in  $0.03$ - $0.1$ Hz (earthquake) and $0.1$ - $0.3$  Hz (microseism) band on April 5, 2019. The second image shows the PUM stage motion between the chains for the same duration.}
+    \label{fig:slowscat_sus}
     
 \end{figure}
 
 \subsection{Slow Scattering.}
-In time-frequency spectrograms, slow scattering triggers resemble an arch.  Fig.\ref{fig:slowscat}. shows slow scattering in h(t) for a day with large ground motion.  As can be observed from this figure, the arches have a period of 7.3 seconds, giving a scattering surface frequency close to 0.13 Hz~\cite{alogsid}. 
-Slow scattering is  dominant during high ground motion in $0.03$ - $0.1$ Hz (earthquake) and $0.1$ - $0.3$  Hz (microseism) band, reaching higher frequencies during larger ground motion and so it is more evident in DARM. During O3, it was particularly strong on Dec 1, 2019 and January 6, 2020.  Depending on the ground motion, slow scattering creates scatter shelves in the frequency band 10 Hz to 120 Hz in h(t) spectra as shown in Fig.\ref{fig:scatshelf1}.
+In time-frequency spectrograms, slow scattering triggers resemble an arch.  Fig. \ref{fig:slowscat}. shows slow scattering in h(t) for a day with large ground motion.  As can be observed from this figure, the arches have a period of 7.3 seconds, giving a scattering surface frequency close to 0.13 Hz~\cite{alogsid}. 
+Slow scattering is  dominant during high ground motion in $0.03$ - $0.1$ Hz (earthquake) and $0.1$ - $0.3$  Hz (microseism) band, reaching higher frequencies during larger ground motion and so it is more evident in DARM. During O3, it was particularly strong on Dec 1, 2019 and January 6, 2020.  Depending on the ground motion, slow scattering creates scatter shelves in the frequency band 10 Hz to 120 Hz in h(t) spectra as shown in Fig. \ref{fig:scatshelf1}.
+
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=10cm]{scatshelf2.png}
-    \caption{ Depending on the ground motion, scattering create shelves in h(t) spectrum that are visible in the range 10 Hz to 120 Hz. The blue curve is from January 6, 2020, a day with extremely high microseism compared against a quieter day.}
-    \label{fig:scatshelf1}
+    \includegraphics[width=8cm]{fastscat6.png}
+    \caption{Fast scattering triggers.}
+    \label{fig:fastscat}
 \end{figure}
 
 
-
 \subsection{Fast Scattering.}
-The fast scattering triggers occur with a frequency close to 4 Hz in contrast to the 0.13-0.14 Hz of slow scattering arches~\cite{alogjosh}. This population of scattering correlates better with the increased ground motion in  1-3 Hz anthropogenic band and is usually higher in the daytime during the weekdays. June 3, 2019, a day with very high ground motion in the 1-3 Hz band registered close to 1000 triggers that resembled fast scattering. 
+The fast scattering triggers shown in Fig. \ref{fig:fastscat}. occur with a frequency close to 4 Hz in contrast to the 0.13-0.14 Hz of slow scattering arches~\cite{alogjosh}. This population of scattering correlates better with the increased ground motion in  $1$ - $3$ Hz (anthropogenic) and $0.1$ - $0.3$ (microseism) band. It is usually higher in the daytime during the weekdays. Human activity near the site, trains passing on the track near the Y end station at LLO shakes the ground in these frequency bands. June 3, 2019, a day with very high ground motion in the 1-3 Hz band registered close to 1000 triggers that resembled fast scattering. 
 
 
 Table \ref{tab:fastslowtab} compares different characteristics of Slow and Fast Scattering.
@@ -309,7 +314,7 @@ Table \ref{tab:fastslowtab} compares different characteristics of Slow and Fast 
 \end{table}{}
 
 
-The striking differences in the glitch morphology, the peak frequency and the duration of the triggers for slow and fast scattering triggers suggest that they have a different mechanism through which the noise couples to the detector. Fig.~\ref{fig:snrdur}. shows the SNR and duration of total scattering glitches in O3a. Both the distribution reveals the presence of more than one population of scattering triggers. As evident from the Table.~\ref{tab:fastslowtab} slow scattering triggers tend to be long duration compared to fast scattering triggers. We will not investigate fast scattering further in this paper. In the next section, we provide a detailed description of slow scattering noise at Livingston.
+The striking differences in the glitch morphology, the peak frequency and the duration of the triggers for slow and fast scattering triggers suggest that they have a different mechanism through which the noise couples to the detector. Fig. ~\ref{fig:snrdur}. shows the SNR and duration of total scattering glitches in O3a. Both the distribution reveals the presence of more than one population of scattering triggers. As evident from the Table.~\ref{tab:fastslowtab} slow scattering triggers tend to be long duration compared to fast scattering triggers. We will not investigate fast scattering further in this paper. In the next section, we provide a detailed description of slow scattering noise at Livingston.
 \begin{figure}[h]
    \centering
     \begin{subfigure}[b]{0.45\textwidth}
@@ -332,13 +337,6 @@ The striking differences in the glitch morphology, the peak frequency and the du
     
 \end{figure}
 
-
-
-\section{Slow Scattering noise at LLO}\label{m0r0_scattering}
-%Slow scattering noise pollutes the h(t) during high ground motion in $0.03$ - $0.1$ Hz and $0.1$-$0.3$ Hz band. An external drive is sent to the reaction chain to move the test mass chain to keep the detector on resonance. This creates relative motion between the end test mass (ETM) and other objects in its vicinity. 
-%Due to this relative motion, any light trapped between the test mass and one of these objects can potentially introduce phase noise once it rejoins the main beam in the detector arms. 
-For most of the first three aLIGO observing runs, slow scattering noise occasionally polluted the h(t) spectra during periods of high ground motion in 0.1-0.3 Hz band. The characteristic scattering arches indicated that there were wavelength-scale or larger modulations of the scattering path. When the detector is operating, an external drive is sent to the end test mass chain to keep the detector on resonance. Because the ground moves differently at the ends of the 4 km long cavities, this drive can lead to micron-scale relative motion between the end test mass (ETM) and other objects in its vicinity, making this region a good candidate for the source of scattering arches.
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{mirror-diagram1.eps}
@@ -346,38 +344,48 @@ For most of the first three aLIGO observing runs, slow scattering noise occasion
     \label{fig:mirror_diag}
 \end{figure}
 
+
+\section{Slow Scattering noise at LLO}\label{m0r0_scattering}
+%Slow scattering noise pollutes the h(t) during high ground motion in $0.03$ - $0.1$ Hz and $0.1$-$0.3$ Hz band. An external drive is sent to the reaction chain to move the test mass chain to keep the detector on resonance. This creates relative motion between the end test mass (ETM) and other objects in its vicinity. 
+%Due to this relative motion, any light trapped between the test mass and one of these objects can potentially introduce phase noise once it rejoins the main beam in the detector arms. 
+For most of the first three aLIGO observing runs, slow scattering noise occasionally polluted the h(t) spectra during periods of high ground motion in 0.1-0.3 Hz band. The characteristic scattering arches indicated that there were wavelength-scale or larger modulations of the scattering path.
+As described in Sec. \ref{introduction} an external drive is applied to the test mass chain to keep the detector on resonance. Because the ground moves differently at the ends of the 4 km long cavities, this drive can lead to micron-scale relative motion between the end test mass (ETM) and other objects in its vicinity, making this region a good candidate for the source of scattering arches.
+
+
 %Consider specifically the relative motion between the end test mass and the annular end reaction mass (AERM).
 %When a part of the light between these two mirrors is transmitted back to the arms, it interferes with the main beam. The difference in phase of the two light beams introduces phase noise in the gravitational wave channel. The information of the path length modulation between the ETM and the AERM is stored in the phase of the light between the two mirrors given by equation 2.
 
  
 Several clues pointed specifically towards a scattering path involving the end reaction mass (ERM): first, the presence of several harmonics of the arches or scattering shelves (with ~$10\%$ of the power in each successive harmonic), indicated that significant fractions of the light traversed the scattered light path more than once. This eliminated several potential paths, such as to baffles or enclosure walls, because imperfect reflections on these other paths would likely cause the loss of more than $90\%$ of the power in each successive round trip. Second, the observation of similar harmonic series of arches at both LHO and LLO suggested that the noise was not due to an improbable alignment. And, third, micron-scale relative motions were recognized between upper stages of the test mass and reaction mass chains, suggesting a variation from the original design, which sought to minimize such large relative motions. 
  
-The relative movement between the ETM and ERM, ${\delta x_{sc}}$ in equation 2, is not directly sensed, but at low frequencies (relative to the ~0.5Hz pendulum resonance) the motion between the ETM and ERM is similar to motion that is sensed at the penultimate stage of the compound pendulum, L2.
+The relative movement between the ETM and ERM, ${\delta x_{sc}}$ in Eq \ref{eq:2}, is not directly sensed, but at low frequencies (relative to the $.45$ Hz pendulum resonance ) the motion between the ETM and ERM is similar to motion that is sensed at the PUM stage of the compound pendulum. This allows us to approximate the motion between the end test mass and the reaction mass with that of PUM stage.  As shown in Fig.~\ref{fig:fringel2}. the fringe frequency calculated using Eq \ref{eq:3}, of the PUM stage motion and its higher harmonics, match scattering arches in h(t) spectrograms pretty well. 
 
 %In this case, ${\delta x_{sc}}$ is the relative movement between the ETM and AERM. Below the natural pendulum frequencies, it is similar to the relative motion between the penultimate stage (PUM) mirrors on test mass chain and reaction chain.  
 %This allows us approximate the relative motion at the end stage by L2 stage motion.
 
 
-As shown in Fig.~\ref{fig:fringel2}. the fringe frequency as given by equation 3, of the PUM stage motion and its higher harmonics, match scattering arches in h(t) spectrograms pretty well. These higher harmonics of the scattering arches suggest that light is reflected multiple times between the test and reaction mass.  For these multiple reflections, we expect the total power reflecting back in the scattered field to decrease, and the rate at which this decreases is a clue to the possible source. 
+%These higher harmonics of the scattering arches suggest that light is reflected multiple times between the test and reaction mass.  For these multiple reflections, we expect the total power reflecting back in the scattered field to decrease, and the rate at which this decreases is a clue to the possible source. 
 \par
-The AERM is in the shape of a hollow cylinder. Most of the light, transmitted through the ETM, goes through the hole onto the other side of the reaction chain as shown in Fig.~\ref{fig:mirror_diag}. A small fraction of this Gaussian beam hits the gold trace electrostatic drive (ESD) on the ERM. Due to its high reflectivity, almost all of it is scattered back towards the test mass and a fraction $\sqrt{T_{end}}$ gets transmitted back to the arm through the ETM. This back scattered field with an additional phase shift, given by equation \ref{eq:2}, interferes with the main beam in the arms and introduces phase noise in h(t).
+
+During operations most of the light, transmitted through the ETM, goes through the reaction mass hole and onto the other side of the reaction chain as shown in Fig.~\ref{fig:mirror_diag}. A small fraction of this Gaussian beam hits the gold trace ESD, referred in Sec. \ref{introduction}, on the ERM. Due to its high reflectivity, almost all of the light is scattered back towards the test mass and a fraction $\sqrt{T_{end}}$ gets transmitted back to the arm through the ETM. This back scattered field with an additional phase shift, given by Eqn \ref{eq:2}, interferes with the main beam in the arms and introduces phase noise in h(t).
 \par
 Let $E_{0}$ be the field in the arms and $E_{asd}$ is the part of this field backscattered from the end reaction mass at the point $E_{0}$ is computed. We can calculate the total field in the arms:
 
-\begin{align}
-    E_{tot} &= E_{0} + E_{asd} \label{eq:4} \\
-    E_{asd} &= E_{0}Ae^{i{\delta}{\phi}(t)} ,\quad A = T_{end}\sqrt{f_{r}}  \label{eq:5} \\ 
-    E_{tot} &= E_{0}[1 + Ae^{i{\delta}{\phi}(t)}]  \label{eq:6}
+\begin{eqnarray}
+    E_{tot} & = & E_{0} + E_{asd} \label{eq:4} \\
+    E_{asd} & = & E_{0}Ae^{i{\delta}{\phi}(t)} ,\quad A = T_{end}\sqrt{f_{r}}  \label{eq:5} \\ 
+    E_{tot} & = & E_{0}[1 + Ae^{i{\delta}{\phi}(t)}]  \label{eq:6}
     %E_{tot} &= E_{0}[1 + Acos({\delta}{\phi}(t)) + Asin({\delta}{\phi}(t))]
-\end{align}
+\end{eqnarray}
 
 
 The equivalent strain for this phase noise is:
-\begin{align}
-    h_{sc} &= \frac{A{\lambda}}{4{\pi}L}sin{\delta}{\phi}  \label{eq:7}
-\end{align}
+\begin{eqnarray}
+     h_{sc} & = & \frac{A{\lambda}}{4{\pi}L}sin{\delta}{\phi}  \label{eq:7}
+\end{eqnarray}
+   
 
-The effect on sensitivity can now be written as:
+And the effect on sensitivity can now be written as:
 \begin{equation}
     h(f) = \frac{\lambda T_{end}\sqrt{f_{r}}}{8{\pi}L}\mathcal{F}[sin(\frac{4{\pi}}{\lambda}{\delta x_{sc}(t)})]  \label{eq:8}
 \end{equation}
@@ -387,7 +395,7 @@ $T_{end}$ is the end test mass transmission, L is the length of arms $f_{r}$ is 
    \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width= \textwidth]{fringel2b_lr.eps}
+         \includegraphics[width= \textwidth]{fringel2b_lr.jpg}
          \caption{Fringe frequency PUM stage motion overlaid on h(t) scattering arches.}
          \label{fig:fringel2}
     \end{subfigure}
@@ -400,14 +408,14 @@ $T_{end}$ is the end test mass transmission, L is the length of arms $f_{r}$ is 
          
     
     \end{subfigure}
-    \caption{In the first plot, we have overlaid the multiple harmonics of the fringe frequency due to the penultimate (PUM) stage motion onto scattering arches. In the second plot, we have plotted the DARM spectrum and the spectrum calculated from the PUM stage motion using the equation 3 with smaller and smaller values for $f_{r}$ as we match higher frequency shelves.}
+    \caption{In the first plot, we have overlaid the multiple harmonics of the fringe frequency due to the penultimate (PUM) stage motion onto scattering arches. In the second plot, we have plotted the DARM spectrum and the spectrum calculated from the PUM stage motion using Eqn \ref{eq:8} with smaller and smaller values for $f_{r}$ as we match higher frequency shelves.}
     \label{fig:fringespectrum}
     
 \end{figure}
 
-The $\delta x_{sc} $ in equation 8 is the relative displacement between the test mass chain and the reaction chain as measured by the optical sensors on the PUM stage. 
+The $\delta x_{sc} $ in Eqn \ref{eq:8} is the relative displacement between the test mass chain and the reaction chain as measured by the optical sensors on the PUM stage. 
 
-The first shelf in the h(t) spectrum in Fig.~\ref{fig:spectruml2}. matches for $\sqrt{f_{r}} = 4e^{-4}$, an order of magnitude smaller than a previous study\cite{hiro_calc}. The coefficient for second and third shelf are $9e^{-5}$ and $9e^{-6}$ respectively, about an order of magnitude reduction for each higher harmonic.
+The first shelf in the h(t) spectrum in Fig.~\ref{fig:spectruml2}. matches for $\sqrt{f_{r}} = 4e^{-4}$, an order of magnitude smaller than a previous study\cite{hiro_calc}. The coefficient for second and third shelf are $5e^{-5}$ and $5e^{-6}$ respectively, about an order of magnitude reduction for each higher harmonic.
 
 \qquad
 
@@ -415,15 +423,17 @@ The first shelf in the h(t) spectrum in Fig.~\ref{fig:spectruml2}. matches for $
 
 \section{Noise mitigation using suspensions control system.} \label{rzero}
 \quad
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=5cm]{R0trackingdiagram.png}
-    \caption{A part of the drive from PUM stage is sent to the R0 stage. This decreases the relative motion between the lower stages of main and reaction chain, thereby reducing the scattered light coupling to the main beam in the detector arms.}
-    \label{fig:r0tracking}
-\end{figure} Scattered light due to the large relative motion between the test mass chain and reaction chain during high ground motion has adversely affected the sensitivity of the detector. 
-During extremely bad microseism as witnessed on Jan 6, 2020, this relative velocity between the ETM and AERM can get as high as 25${\mu}$m/s. And for any ${\delta}x >> {\lambda}$ there is an upconversion of the low-frequency motion of the mirrors which shows up as scattering shelves/arches with the frequency determined by Eq 2. In h(t) spectrograms, multiple harmonics of the scattering arches cover the frequency band 10 Hz to 120 Hz due to light reflecting between the ETM and AERM during high microseism as shown in Fig \ref{fig:fringel2}.
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=5cm]{R0trackingdiagram.png}
+%     \caption{A part of the drive from PUM stage is sent to the R0 stage. This decreases the relative motion between the lower stages of main and reaction chain, thereby reducing the scattered light coupling to the main beam in the detector arms.}
+%     \label{fig:r0tracking}
+% \end{figure} 
 
-One way to reduce this noise coupling is by reducing the relative motion between the ETM and AERM while keeping the intended relative motion between the ETM and the input test mass (ITM) in the arm cavity. This can be achieved by sending a part of the drive from the PUM stage and feeding it to the R0 stage as shown in Fig.~\ref{fig:r0tracking}. This will cause the two chains to move together and hence reduces the relative motion between them. The reaction chain ``tracks'' the main chain~\cite{alog_robert}. Fig.~\ref{fig:l2_comparison}. compares the distance fluctuations between the PUM stages of test mass chain reaction chain before and after the tracking was implemented, for two days with similar levels of microseism.
+Scattered light due to the large relative motion between the test mass chain and reaction chain during high ground motion has adversely affected the sensitivity of the detector. 
+During extremely bad microseism as witnessed on Jan 6, 2020, this relative velocity between the ETM and AERM can get as high as 25${\mu}$m/s. And for any ${\delta}x >> {\lambda}$ there is an upconversion of the low-frequency motion of the mirrors which shows up as scattering shelves/arches with the frequency determined by Eqn \ref{eq:3}. In h(t) spectrograms, multiple harmonics of the scattering arches cover the frequency band 10 Hz to 120 Hz due to light reflecting between the ETM and AERM during high microseism as shown in Fig. \ref{fig:fringel2}.
+
+One way to reduce this noise coupling is by reducing the relative motion between the ETM and AERM while keeping the intended relative motion between the ETM and the input test mass (ITM) in the arm cavity. This can be achieved by sending a part of the drive from the PUM stage and feeding it to the R0 stage as shown in Fig.~\ref{fig:r0tracking}. This will cause the two chains to move together and hence reduces the relative motion between them. The reaction chain ``tracks'' the main chain~\cite{alog_robert}. Fig.~\ref{fig:l2_comparison}. compares the distance fluctuation between the PUM stage of the quad suspension before and after the tracking was implemented, for two days with similar levels of microseism.
 
 \begin{figure}[h]
     \centering
@@ -433,61 +443,84 @@ One way to reduce this noise coupling is by reducing the relative motion between
 \end{figure}
 
 \subsection{ETM-AERM Scattering Post R0 tracking.}
-R0 tracking was implemented on Jan 7, 2020, at LLO~\cite{alog_anamaria}. To understand the impact of the tracking on slow scattering caused by ETM-AERM relative motion, we observed the SNR of scattering triggers and ground motion in the earthquake and microseism band between Nov 1, 2019, the start of O3b and Feb 8, 2020. These triggers are classified as scattering by GravitySpy with confidence above 0.9. We divided this data into Pre and Post R0, where Pre R0 is from Nov 1, 2019, to Jan 6, 2020, and Post R0 is from Jan 10, 2020, to Feb 8, 2020. The analyzed data is normalized by the observing duration of Post R0 considered in this study ($\sim 21$ days). We found a clear reduction in the SNR of the scattering triggers for the Post R0 scattering without any considerable change in the ground motion~\cite{alogsid_R0}. We used Mann-Whitney U test to compare the Pre and Post R0 data with the null hypothesis that there is no change in the ground motion and SNR of triggers[ref]. The SNR comparison is shown in Fig.~\ref{fig:snr_r0}.
+R0 tracking was implemented on Jan 7, 2020, at LLO~\cite{alog_anamaria}. To understand the impact of the tracking on slow scattering caused by ETM-AERM relative motion, we observed the SNR of scattering triggers and ground motion in the earthquake and microseism band between Nov 1, 2019, the start of O3b and Feb 8, 2020. These triggers are classified as scattering by GravitySpy with confidence above 0.9. We divided this data into Pre and Post R0, where Pre R0 is from Nov 1, 2019, to Jan 6, 2020, and Post R0 is from Jan 10, 2020, to Feb 8, 2020. The analyzed data is normalized by the observing duration of Post R0 considered in this study ($\sim 21$ days). We found a clear reduction in the SNR of the scattering triggers for the Post R0 scattering without any considerable change in the ground motion~\cite{alogsid_R0}. A similar analysis for LHO showed an even bigger reduction in the SNR of scattering triggers Post R0 tracking. We used Mann-Whitney U test to compare the Pre and Post R0 data with the null hypothesis that there is no change in the ground motion and SNR of triggers[ref]. The SNR comparison for LLO and LHO is shown in Fig.~\ref{fig:postr0_scat}.
 \par
 \begin{figure}[h]
+\captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
    \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width= \textwidth,height=3.9cm]{snr_preandpost.eps}
-         \caption{SNR comparison Pre and Post R0 tracking.}
+         \includegraphics[width= \textwidth,height=3.9cm]{snr_preandpostLLO.png}
+         \caption{SNR comparison at LLO.}
          \label{fig:snr_r0}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width =\textwidth]{rate_r0.png}
-         \caption{Glitch rate comparison for O3a, Pre and Post R0 tracking in O3b.}
+         \includegraphics[width =\textwidth,height=3.9cm]{snr_preandpostLHO.png}
+         \caption{SNR comparison  at LHO.}
          \label{fig:rate_r0}
-         
-    
     \end{subfigure}
-    \caption{The first image compares the SNR of Scattering glitches Pre and Post R0 tracking. The levels of microseism were found to be similar for the observing duration used in this comparison. This shows a clear reduction in the SNR of the scattering triggers following R0 tracking implementation. The second image compares the rate of scattering triggers for different levels of microseism. This shows that for similar levels of microseism above $1{\mu}m/s$, the Post R0 glitch rate (in green) is substantially lower than Pre R0 (in orange).}
+    \par\bigskip
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+         \includegraphics[width= \textwidth,height=3.9cm]{micro_preandpostLLO.png}
+         \caption{Ground motion comparison at LLO.}
+         
+         \label{fig:snr_r0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+         \includegraphics[width =\textwidth,height=3.9cm]{micro_preandpostLHO.png}
+         \caption{Ground motion comparison at LHO.}
+         \label{fig:rate_r0}
+    \end{subfigure}
+    
+    
+    
+    \caption{The first image compares the SNR of Scattering glitches Pre and Post R0 tracking for LLO. The second image shows similar comparison for LHO. The levels of microseism were found to be similar for the observing duration used in this comparison. This shows a clear reduction in the SNR of the scattering triggers following R0 tracking implementation. } % second image compares the rate of scattering triggers for different levels of microseism. This shows that for similar levels of microseism above $1{\mu}m/s$, the Post R0 glitch rate (in green) is substantially lower than Pre R0 (in orange).}
     \label{fig:postr0_scat}
     
 \end{figure}
-We also compared the rate of scattering triggers against the microseismic ground motion for O3a and O3b, with O3b divided into Pre and Post R0. Here again, we found that for similar levels of microseism above 1${\mu}m/s$, the Post R0 glitch rates are considerably lower as shown in Fig.~\ref{fig:rate_r0}.~\cite{alog_corey}.
+We also compared the rate of scattering triggers against the microseismic ground motion for O3a and O3b, with O3b divided into Pre and Post R0. Here again, we found that for similar levels of microseism above 1${\mu}m/s$, the Post R0 glitch rates are considerably lower as shown in Fig. [new figure needed]~\cite{alog_corey}.
 
 
-
+\vspace{2cm}
 \section{Relative motion between test mass and transmitted light monitors.} \label{transmon_scattering}
-As mentioned in Section \ref{introduction} , the control drive sent to the reaction chain creates relative motion between the test mass chain and other objects in its vicinity. Relative motion between the test mass and the monitors of transmitted light is found to be another source of scattered light in DARM \cite{alogae_tmsx,alogsid_tmsx}.
+As mentioned in Sec. \ref{introduction}, the control drive sent to the reaction chain creates relative motion between the test mass chain and other objects in its vicinity. Relative motion between the test mass and the monitors of transmitted light is found to be another source of scattered light in DARM.
 \par
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=12cm]{mirror-diag2.png}
+%     \caption{During high ground motion, the magnetic actuators on the top three masses of reaction chain and electrostatic drive on the end reaction mass push the test mass chain to keep the interferometer on resonance. This changes the distance between the test mass and other objects in its vicinity. ETM-AERM scattering discussed earlier correlates with $L_{1}$ fluctuations. TMS or transmission motor system behind the mirrors, houses quadrant photo-diodes. These photo-diodes are used to check for the alignment of the cavity. Distance fluctuations between these monitors of  transmitted light and the test mass causes ETM-TMS scattering.}
+%     \label{fig:my_label}
+% \end{figure}
+
 \begin{figure}[h]
     \centering
-    \includegraphics[width=12cm]{mirror-diag2.png}
-    \caption{During high ground motion, the magnetic actuators on the top three masses of reaction chain and electrostatic drive on the end reaction mass push the test mass chain to keep the interferometer on resonance. This changes the distance between the test mass and other objects in its vicinity. ETM-AERM scattering discussed earlier correlates with $L_{1}$ fluctuations. TMS or transmission motor system behind the mirrors, houses quadrant photo-diodes. These photo-diodes are used to check for the alignment of the cavity. Distance fluctuations between these monitors of  transmitted light and the test mass causes ETM-TMS scattering.}
-    \label{fig:my_label}
+    \includegraphics[width=\textwidth]{postr0-scatomega.png}
+    \caption{Slow scattering arches in h(t) post Rzero tracking. }
+    \label{fig:postr0_omeg}
 \end{figure}
-
 %A small fraction of light that gets transmitted through the end test mass, is received by the quadrant photo-diodes on the Transmission motor system (TMS). 
-During high microseism, the path length between the ETM and the TMS is modulated, changing the phase of the light beam between them. This phase noise then shows up as scattering arches in both h(t) and the transmitted photo-diode channel at the same frequency. 
+During high microseism, the path length between the ETM and the TMS is modulated, changing the phase of the light beam between them. This phase noise then shows up as scattering arches in both h(t) and the transmitted photo-diode channel at the same frequency. Fig. \ref{fig:postr0_omeg} shows a Post R0 slow scattering arch in the time-frequency representation. The lack of multiple arches suggests that the scattering  path does not involve multiple traversals between the test mass and the scatterer.
 
 %Since the dominant motion of ETM with respect to nearby objects is the DARM drive in between the quad chains, the motion between the ETM and AERM is twice the motion of the ETM (with respect to other objects like the cage, walls or TMS). 
-As discussed earlier in the introduction, the motion in between the test mass and the TMS is one-half of the motion between the chains.
-Thus, the scattering shelf/arch due to ETM-TMS relative motion is observed at one-half the frequency of the scattering shelf/arch due to ETM-AERM relative motion. This can be seen in the Fig.~\ref{fig:1262darm}. where the first harmonic due to ETM-AERM scattering is at 40 Hz and the scattering arch due to ETM-TMS noise coupling is at 20 Hz.
+As discussed in Sec. \ref{introduction}, the motion in between the test mass and the TMS is one-half of the motion between the chains.
+Thus, the scattering shelf/arch due to ETM-TMS relative motion is observed at one-half the frequency of the scattering shelf/arch due to ETM-AERM relative motion. This can be seen in the Fig.~\ref{fig:1262darm}. where the first harmonic due to ETM-AERM scattering is at 40 Hz and the scattering arch due to ETM-TMS scattering is at 20 Hz.
 
 \begin{figure}[h]
    \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width= \textwidth]{1262389546darmnew.eps}
+         \includegraphics[width= \textwidth]{1262389546darmnew2.png}
          \caption{Scattering arches in h(t).}
          \label{fig:1262darm}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width =\textwidth]{1262389546transnew.eps}
+         \includegraphics[width =\textwidth,height=3.6cm]{1262389546transnnew2.png}
          \caption{Scattering arch in X end photo-diode.}
          \label{fig:1262trans}
          
@@ -499,12 +532,13 @@ Thus, the scattering shelf/arch due to ETM-TMS relative motion is observed at on
 \end{figure}
 The presence of scattering arches in these transmitted light monitors serves as a witness of scattering in h(t). Whenever there is relative motion between test mass chain and reaction chain, the distance between the test mass and TMS also fluctuates. These are two separate but simultaneous path length fluctuations with a common source, the test mass motion. Scattering arches due to both of these distinct path length fluctuations are thus present at the same time in h(t) albeit at different frequencies.
 \par
-R0 tracking does not affect the relative movement of the test mass chain with respect to the ISI cage or TMS or chamber walls. The light scattering due to ETM-TMS coupling thus remains unchanged. The scattering arch/shelf due to this noise coupling is very rarely above 10 Hz in both h(t) and transmitted photo-diode channel. In order to make a shelf at $f$ Hz, the relative velocity must be at least $\frac{f{\lambda}}{2}$, so for 10 Hz, we need the relative velocity between the ETM and TMS to be at least $5\mu{\rm m/s}$. This greater than 5-micron relative motion occurs during high ground motion in $0.1$-$0.3$ Hz band (above $2\mu{\rm m/s}$) ~\cite{alogsid_trans}. Fig.~\ref{fig:etm-transmon}. shows scattering shelf in h(t) and X end transmitted photo-diode channel due to ETM-TMS coupling during a period of high ground motion in the microseism ($0.1$-$0.3$ Hz) band.
+R0 tracking does not affect the relative movement of the test mass chain with respect to the ISI cage or TMS or chamber walls. The light scattering due to ETM-TMS coupling thus remains unchanged. The scattering arch/shelf due to this noise coupling is very rarely above 10 Hz in both h(t) and transmitted photo-diode channel. In order to make a shelf at $f$ Hz, the relative velocity must be at least $\frac{f{\lambda}}{2}$, so for 10 Hz, we need the relative velocity between the ETM and TMS to be at least $5\mu{\rm m/s}$. This greater than 5-micron relative motion occurs during high ground motion (above $2\mu{\rm m/s}$) in $0.1$-$0.3$ Hz band ~\cite{alogsid_trans}.
+%Fig.~\ref{fig:etm-transmon}. shows scattering shelf in h(t) and X end transmitted photo-diode channel due to ETM-TMS coupling during a period of high ground motion in the microseism ($0.1$-$0.3$ Hz) band.
 \par
 Prior to R0 tracking, a scattering shelf in transmitted photo-diode channel at $f$ Hz will predict scattering shelves in h(t) at $f$ Hz due to ETM-TMS coupling and at 2$f$, 4$f$, 6$f$ and so on due to ETM-AERM coupling. Following R0 tracking, a shelf in transmitted photo-diode channel at $f$ Hz only corresponds to a shelf in h(t) at the same frequency. The higher frequency scattering shelves due to ETM-AERM coupling have gone away. Fig.~\ref{fig:etm-transmon}.
 compares the scattering shelves in h(t) and X end transmitted photo-diode channel for scattering events before and after R0 tracking.
 \par
-During O3, the control drive was sent to the X end of the detector. One possible remedy to reduce the ETM-TMS noise coupling is to split and apply this drive at both ends. Further reduction can be employed by making the TMS follow the test mass chain. 
+%During O3, the control drive was sent to the X end of the detector. One possible remedy to reduce the ETM-TMS noise coupling is to split and apply this drive at both ends. Further reduction can be employed by making the TMS follow the test mass chain. 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{etm-transmon1.png}
@@ -512,13 +546,16 @@ During O3, the control drive was sent to the X end of the detector. One possible
     \label{fig:etm-transmon}
 \end{figure}
 
+TMS tracking, a technique similar to R0 tracking can be employed to check the relative motion of ETM with respect to TMS. We performed a test during which we shook the internal seismic isolation platform at each end to study its effects on DARM. Motion at either end prompts the external drive at the X end to push on the test mass chain to mitigate the DARM length fluctuations. Shaking the Y end ISI creates a scatter shelf in Y as well as X end transmitted photo-diode, along with h(t). Moving the X end ISI does not affect the test mass motion at Y end as there is no DARM drive sent to Y end.
+Next, we implemented TMSX feedforward while shaking the X end ISI, to control the relative motion between the ETMX and TMSX. This was accomplished by sending the output of the M0 stage of the test mass chain to TMSX. TMSX tracking reduced the relative motion between the test mass chain and the TMS thereby moving the shelf to frequencies where it is no longer visible in h(t) spectra \cite{alogae_tmsx,alogsid_tmsx}. 
+
  
 \section{Using transmitted photo-diodes to identify scattering.}\label{transmonwitness}
-In last section, we showed that transmitted photo-diode channels at the drive end serve as a witness of scattering noise in h(t). Fig.~\ref{fig:transetmx}. shows a time correlation between the scattering triggers in h(t) as identified by GravitySpy and the noise in the transmitted photo-diode channel. Due to the presence of this temporal coincidence of triggers, the noise in this auxiliary channel can be used to identify the scattering noise in h(t). Along with OSEM’s mentioned in section \ref{osems}, these channels can be added to the list of scattering witnesses in the algorithm - \textbf{gwdetchar-scattering}.
+In last section, we showed that transmitted photo-diode channels at the drive end serve as a witness of scattering noise in h(t). Fig.~\ref{fig:transetmx}. shows a time correlation between the scattering triggers in h(t) as identified by GravitySpy and the noise in the transmitted photo-diode channel. Due to the presence of this temporal coincidence of triggers, the noise in this auxiliary channel can be used to identify the scattering noise in h(t). Along with OSEM’s mentioned in Sec. \ref{osems}, these channels can be added to the list of scattering witnesses in the algorithm - \textbf{gwdetchar-scattering}.
 
 \begin{figure}[h]
   \centering
-         \includegraphics[width = 12cm,height=12cm]{hxtrb_corr1.jpg}
+         \includegraphics[width = 14cm,height=12cm]{hxtrb_corr1.jpg}
          \caption{Noise correlation between X end transmitted photo-diode and slow scattering in h(t) channel during the first three months of O3a.}
     \label{fig:transetmx}
 \end{figure}
@@ -590,7 +627,7 @@ We also examined the performance of blrms segments against OSEMs on 3 days in O3
 Blrms segments perform better than OSEMSs because they are fine tuned to catch slow scattering. The \textbf{gwdetchar-scattering} algorithm with just OSEMSs as scattering witnesses, is designed to capture the motion of optics throughout the interferometer. As discussed in earlier sections, the slow scattering noise is a result of relative motion between the end test mass and other objects in its vicinity, the reaction mass and TMS in particular. OSEMSs in the output mode cleaner or signal recycling cavity will not be sensitive to this motion. As we are aware of the potential location of scattering, we can use a more specific approach by employing the transmitted photodiode’s blrms segments to capture the noise. 
 
 
-Of the two separate noise couplings mentioned in Sec \ref{m0r0_scattering}  and Sec \ref{transmon_scattering}, the L2 stage OSEM is sensitive to only first of these, the ETM-AERM relative motion. And in principle we expect it to identify as much noise as the blrms segments. Following R0 tracking however, the scattering impact due to ETM AERM relative motion has reduced whilst having no effect on ETM TMS noise which the L2 stage is not sensitive to. Post R0 slow scattering noise can thus still be identified using the blrms segments.
+Of the two separate noise couplings mentioned in Sec. \ref{m0r0_scattering}  and Sec. \ref{transmon_scattering}, the PUM stage OSEM is sensitive to only first of these, the ETM-AERM relative motion. And in principle we expect it to identify as much noise as the blrms segments. Following R0 tracking however, the scattering impact due to ETM AERM relative motion has reduced whilst having no effect on ETM TMS noise which the PUM stage is not sensitive to. Post R0 slow scattering noise can thus still be identified using the blrms segments.
 
 
 
