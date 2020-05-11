@@ -184,7 +184,7 @@ The LIGO end station housing the end test masses \cite{ETM_ref} of the two inter
     \caption{The schematic of end station housing shows the seismic isolation system, quadruple suspension, transmission motion system (TMS), and the seismometer used to measure ground vibrations. The OSEMs in the quad suspension cage measure relative motion and produce a force on the main and reaction chain. About 4 ppm of the light power in the arms, is transmitted through the end test mass. $95$\% of this 4 ppm is dumped and the remaining $5$ \% is split onto the two-quadrant photo-diodes (QPDs) in the TMS. These QPD's are used to check for any misalignment of the beam on the end test mass. }
     \label{fig:end_station}
 \end{figure}
-The suspension for the test mass uses Optical Shadow sensor and Magnetic actuators (OSEM)  at the top three stages as well as an electrostatic drive (ESD) at the test mass stage. The OSEMs at the top stages measure relative motion and can produce a force (actuate) between the cage and the two chains. For the upper-intermediate mass (UIM) and penultimate (PUM) mass stages, the OSEMs measure and actuate in-between the two chains. The ESD is formed by the installation of 5 gold traces on reaction mass. Applying a voltage on the gold traces, and electrostatic force can drive the test mass.  The reaction mass is a hollow cylinder to allow the transmitted beam to pass without encountering additional optical surfaces <ref aerm>.
+The suspension for the test mass uses Optical Shadow sensor and Magnetic actuators (OSEM)  at the top three stages as well as an electrostatic drive (ESD) at the test mass stage. The OSEMs at the top stages measure relative motion and can produce a force (actuate) between the cage and the two chains. For the upper-intermediate mass (UIM) and penultimate (PUM) mass stages, the OSEMs measure and actuate in-between the two chains. The ESD is formed by the installation of 5 gold traces on reaction mass \cite{esd_schematic}. Applying a voltage on the gold traces, and electrostatic force can drive the test mass.  The reaction mass is a hollow cylinder to allow the transmitted beam to pass without encountering additional optical surfaces \cite{aerm_schematic}.
 
 The transmission monitor is a double suspension with OSEM's at the top stage, measuring motion with respect to its cage \cite{Barsotti_2010}. It houses a telescope to reduce the large beam size coming from the arm. The LIGO end test masses have a transmission of approximately 4ppm, so for an arm power of 250kW as in O3a for the Livingston detector, the transmitted beam would be about 1W. $95\%$ of this light is dumped and $5\%$ is split about equally between two quadrant photodiodes, named A and B. 
 
@@ -229,7 +229,8 @@ where $f_{fringe}(t)$ is the fringe frequency and n is the number of times stray
 
 
 %\subsection{GravitySpy}
-GravitySpy is an image recognition tool that uses machine learning to classify the variety of glitches that show up as transient noise in the strain data~\cite{gspy}~\cite{gspymachine}. It is a citizen science project and volunteers help to generate the training dataset by assigning one of the several glitch class to the spectrogram images. The algorithm is then trained, on the time-frequency spectrograms of these labeled glitches. Based on this model training, the algorithm then classifies a new glitch into one of the several transient noise categories, scattering being one of them.
+During the first and second Observing runs, scattering triggers were identified by measuring the motion of some of the optics that could be responsible for the scattering, discussed in Sec. \ref{transmon_scattering}, and by looking at the output of GravitySpy.
+GravitySpy is an image recognition tool that uses machine learning to classify the variety of glitches that show up as transient noise in the strain data~\cite{gspy}~\cite{gspymachine}. It is a citizen science project and volunteers help to generate the training dataset by assigning one of the several glitch class to the spectrogram images. The algorithm is then trained, on the time-frequency spectrograms of these labeled glitches. Based on this model training, the algorithm then classifies a new glitch into one of the several transient noise categories, scattering being one of them. Fig. \ref{fig:gspyimages}. shows 3 of the many glitch classes, identified by GravitySpy.
 
 \begin{figure}[h]
     \centering
@@ -310,7 +311,7 @@ Slow scattering is  dominant during high ground motion in $0.03$ - $0.1$ Hz (ear
          
     
     \end{subfigure}
-    \caption{}
+    \caption{The first figure shows the fast scattering triggers in time-frequency plane. Each ``arch'' contains multiple sub-arches. Fast scattering triggers correlate well with high ground motion in the $1$ - $3$ Hz (anthropogenic) band. The figure on the right shows the ground motion in the $1$ - $3$ Hz band at X and Y end of the detector at LLO on Feb, 9, 2020, a day with a very high rate of fast scattering triggers. }
     \label{fig:Fast_scattering}
     
 \end{figure}
@@ -350,19 +351,19 @@ The striking differences in the glitch morphology, the peak frequency and the du
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
          \includegraphics[width= 6cm]{histsnr4b.png}
-         \caption{SNR distribution for scattering in O3.}
+         \caption{SNR distribution for scattering in O3a.}
          \label{fig:histsnr}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.5\textwidth}
         \centering
          \includegraphics[width =6cm]{histdur4b.png}
-         \caption{ Duration distribution of scattering in O3.}
+         \caption{ Duration distribution of scattering in O3a.}
          \label{fig:histdur}
          
     
     \end{subfigure}
-    \caption{The SNR and duration histograms for total scattering in O3 reveal the presence of two populations the Fast and Slow scattering. Slow scattering tends to be louder and long duration. During notably high micro-seismic motion, there are several more slow scattering arches, that causes the third bump in the duration plot.}
+    \caption{The SNR and duration histograms for total scattering in O3a reveal the presence of two populations the Fast and Slow scattering. Slow scattering tends to be louder and long duration. During notably high micro-seismic motion, there are several more slow scattering arches, that causes the third bump in the duration plot.}
     \label{fig:snrdur}
     
 \end{figure}
@@ -612,7 +613,7 @@ In the last section, we showed that the transmitted photo-diode channels serve a
     \label{fig:transetmx}
 \end{figure}
 
-Apart from slow scattering, Extremely Loud triggers, which is another class of triggers characterized by typically high SNR also makes its way to the transmitted photo-diode channels. To differentiate the presence of slow scattering noise in h(t) from loud glitches, we can look at the frequency content of the coincident noise in the transmitted photo-diodes. The scattering noise in these witness channels appears in the range  4 - 10 Hz while the triggers coincident with loud glitches in h(t) typically appear with higher peak frequency. We can use this fact to isolate the presence of slow scattering in h(t).
+Apart from slow scattering, Extremely Loud triggers, which is another class of triggers characterized by typically high SNR also makes its way to the transmitted photo-diode channels. To differentiate the presence of slow scattering noise in h(t) from loud glitches, we can look at the frequency content of the coincident noise in the transmitted photo-diodes. The scattering noise in these witness channels appears in the range  4 - 10 Hz while the triggers coincident with loud glitches in h(t) typically appear with higher peak frequency. 
 
 \subsection{Band-limited RMS}
 To capture the scattering triggers in h(t), we use whitened band-limited RMS segments constructed from the raw time-series of the transmitted photo-diode channels, in the frequency band of interest. A scattering trigger in h(t) shows up as a spike in these band-limited RMS also known as blrms. By choosing a suitable threshold, we can create blrms segments and then use time coincidence with the triggers in h(t) to identify the scattering triggers. Any h(t) triggers that coincide with these band-limited segments are then written to a file as potential scattering trigger times.  This process is shown in Fig.~\ref{fig:flow}. It is important to note that a glitch in the transmitted photo-diode channel outside the band of interest will not result in a spike and this ensures that blrms segments only catch scattering noise in h(t). Before finding time coincidence between the h(t) triggers and blrms segments, we filter the triggers by SNR (between 15 and 200) and frequency (between 10 Hz and 60 Hz), thus excluding the loud glitches that can pollute the algorithm. This is done to reduce the size of the target dataset and scattering noise occurs well within these bounds. 
