@@ -127,7 +127,7 @@
 
 %\address{Louisiana State University, Louisiana, USA.}
 
-\author{[Tentative] S. Soni$^1$, C. Austin$^1$, A. Effler$^2$, V. Frolov$^2$, J. Driggers$^4$, A. Pele$^2$, G. Gonz\'alez$^1$, R. Schofield$^{3,4}$, A. Urban$^1$, G. Valdes$^1$}\address{$^1$ Department of Physics and Astronomy, Louisiana State University, Baton Rouge, LA, 70803, USA}\address{$^2$ LIGO Livingston Observatory, Livingston, LA 70754, USA}\address{$^3$ Department of Physics, University of Oregon, Eugene, OR 97403, USA}\address{$^4$ LIGO Hanford Observatory, Richland, WA, 99352, USA} \ead{ssoni3@lsu.edu}
+\author{ S. Soni$^1$, C. Austin$^1$, A. Effler$^2$,  R. Schofield$^{3,4}$, G. Gonz\'alez$^1$, V. Frolov$^2$, J. Driggers$^4$, A. Pele$^2$,  A. Urban$^1$, G. Valdes$^1$ + [Instrumentation list]}\address{$^1$ Department of Physics and Astronomy, Louisiana State University, Baton Rouge, LA, 70803, USA}\address{$^2$ LIGO Livingston Observatory, Livingston, LA 70754, USA}\address{$^3$ Department of Physics, University of Oregon, Eugene, OR 97403, USA}\address{$^4$ LIGO Hanford Observatory, Richland, WA, 99352, USA} \ead{ssoni3@lsu.edu}
 \begin{abstract}
 %% Text of abstract
 
@@ -461,7 +461,7 @@ $T_{end}$ is the ETM amplitude transmission ($4e^{-4}$), L is the length of arms
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width =\textwidth]{spectrum_l2new.png}
+         \includegraphics[width =\textwidth]{spectrum_l2new1.png}
          \caption{PUM stage amplitude spectral density overlaid on h(t) spectrum.}
          \label{fig:spectruml2}
          
@@ -540,7 +540,7 @@ We also compared the rate of scattering triggers against the microseismic ground
 
 
 \section{Relative motion between test mass and transmitted light monitors} \label{transmon_scattering}
-As mentioned in Sec. \ref{hardware}, the control drive sent to the reaction chain creates relative motion between the test mass chain and other objects in its vicinity. Relative motion between the test mass and the monitors of transmitted light is found to be another source of scattered light in DARM.
+As mentioned in Sec. \ref{hardware}, the control drive sent to the end test mass chain creates relative motion between the test mass and all other objects in its vicinity, such as the AERM, the TMS, vacuum chamber walls, or mechanical structures. When motion is high enough, the phase modulation from this path length difference can show up as scattering arches in both h(t) and the transmitted photo-diode channel. The motion in between the main and reaction chain is twice compared to the motion between test mass and all other objects. Thus, the scattering shelf/arch due to ETM-TMS relative motion is observed at one-half the frequency of the scattering shelf/arch due to ETM-AERM relative motion. This can be seen in Fig. \ref{fig:1262darm} where the first harmonic due to ETM-AERM scattering is at 40 Hz and the scattering arch due to ETM-TMS scattering is at 20 Hz. Before RC tracking, a scattering shelf in transmitted photo-diode channel at $f$ Hz will predict scattering shelves in h(t) at $f$ Hz due to ETM-TMS coupling and at 2$f$, 4$f$, 6$f$ and so on due to ETM-AERM coupling. Following RC tracking, a shelf in transmitted photo-diode channel at $f$ Hz only corresponds to a shelf in h(t) at the same frequency.
 \par
  
 \begin{figure}[h]
@@ -577,30 +577,20 @@ As mentioned in Sec. \ref{hardware}, the control drive sent to the reaction chai
     \label{fig:1262scat}
     
 \end{figure}
-During high microseism, the path length between the end test mass (ETM) and the transmission monitor system (TMS) is modulated, changing the phase of the light beam between them. This phase noise then shows up as scattering arches in both h(t) and the transmitted photo-diode channel at the same frequency. Fig. \ref{fig:1265darm} shows a  slow scattering arch in the time-frequency representation, after the RC tracking was implemented. The lack of multiple arches suggests that the scattering  path does not involve multiple traversals between the test mass and the scatterer.
 
-%Since the dominant motion of ETM with respect to nearby objects is the DARM drive in between the quad chains, the motion between the ETM and AERM is twice the motion of the ETM (with respect to other objects like the cage, walls or TMS). 
-
-As discussed in Sec. \ref{hardware}, the motion in between the test mass and the TMS is one-half of the motion between the chains.
-Thus, the scattering shelf/arch due to ETM-TMS relative motion is observed at one-half the frequency of the scattering shelf/arch due to ETM-AERM relative motion. This can be seen in the Fig. ~\ref{fig:1262darm} where the first harmonic due to ETM-AERM scattering is at 40 Hz and the scattering arch due to ETM-TMS scattering is at 20 Hz.
-
-
-
-The presence of scattering arches in these transmitted light monitors serves as a witness of scattering in h(t). Whenever there is relative motion between test mass chain and reaction chain, the distance between the test mass and TMS also fluctuates. These are two separate but simultaneous path length fluctuations with a common source, the test mass motion. Scattering arches due to both of these distinct path length fluctuations are thus present at the same time in h(t) albeit at different frequencies.
-\par
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{etm-transmon.png}
     \caption{The left image shows scattering shelves in X end transmitted photo-diode and h(t) before RC tracking was implemented. The scattering shelf at 10 Hz in h(t) correlates with ETM-TMS noise coupling, while the higher frequency shelves at $\sim$ 20 Hz and $\sim$ 40 Hz are due to ETM-AERM scattering. The image on the right is for a Post RC tracking scattering event and higher frequency shelves are absent in h(t) due to reduced relative motion between the main chain and the reaction chain.}
     \label{fig:etm-transmon}
 \end{figure}
-RC tracking does not affect the relative movement of the test mass chain with respect to the ISI cage or TMS or chamber walls. The light scattering due to ETM-TMS coupling thus remains unchanged. The scattering arch/shelf due to this noise coupling is very rarely above 10 Hz in both h(t) and transmitted photo-diode channel and is not visible above noise sources. In order to make a shelf at $f$ Hz, the relative velocity must be at least $\frac{f{\lambda}}{2}$, so for 10 Hz, we need the relative velocity between the ETM and TMS to be at least $5\mu{\rm m/s}$. This greater than 5-micron relative motion occurs during high ground motion (above $2\mu{\rm m/s}$) in $0.1$-$0.3$ Hz band ~\cite{alogsid_trans}.
+
 %Fig.~\ref{fig:etm-transmon}. shows scattering shelf in h(t) and X end transmitted photo-diode channel due to ETM-TMS coupling during a period of high ground motion in the microseism ($0.1$-$0.3$ Hz) band.
 \par
+Fig. ~\ref{fig:1265darm} shows a slow scattering arch in the time-frequency representation, after the RC tracking was implemented. The lack of multiple arches suggests that the scattering path does not involve multiple traversals between the test mass and the scatterer. The TMS-ETM scatter mechanism was confirmed experimentally. Low frequency motion was injected at the Y end seismic isolation table, forcing the DARM loop to respond by inducing large motion at the X end test mass and creating a scatter shelf in h(t). The TMS was then fed the same motion, reducing the relative motion in between it and the optic and the h(t) scatter shelf disappeared ~\cite{alogae_tmsx,alogsid_tmsx}.
 
-Prior to RC tracking, a scattering shelf in transmitted photo-diode channel at $f$ Hz will predict scattering shelves in h(t) at $f$ Hz due to ETM-TMS coupling and at 2$f$, 4$f$, 6$f$ and so on due to ETM-AERM coupling. Following RC tracking, a shelf in transmitted photo-diode channel at $f$ Hz only corresponds to a shelf in h(t) at the same frequency. With RC tracking the higher frequency scattering shelves due to ETM-AERM coupling have gone away. Fig. ~\ref{fig:etm-transmon}
-compares the scattering shelves in h(t) and X end transmitted photo-diode channel for scattering events before and after RC tracking. 
-During O3, the control drive was sent to the X end of the detector. One possible remedy to reduce the ETM-TMS relative motion is to split and apply this drive at both ends. Further reduction can be employed by making the TMS follow the test mass chain \cite{alogae_tmsx,alogsid_tmsx}. [Will include details of the ISI shaking test]
+ With RC tracking the higher frequency scattering shelves due to ETM-AERM coupling have gone away. Fig. ~\ref{fig:etm-transmon} compares the scattering shelves in h(t) and X end transmitted photo-diode channel for scattering events before and after RC tracking. One remedy to reduce the ETM-TMS relative motion is to split and apply this drive at all four test masses forming the LIGO arm cavities. Further reduction can be employed by making the TMS follow the test mass chain like in the test described above ~\cite{alog_anamaria,alogsid_R0}.
+
 \par 
 
 \vspace{0.5cm}
