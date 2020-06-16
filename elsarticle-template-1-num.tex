@@ -205,16 +205,23 @@ Tiny imperfections on the surfaces of test mass mirrors in the interferometer ca
 
 The motion of the scatterer introduces an additional phase in the field reflected from its surface. Consider a small fraction A of the total field that gets scattered back to the main beam, from a scattering surface located behind the end test mass (ETM). This light will acquire an additional phase ${\phi}(t)$ due to the path length modulation caused by the relative motion between the end test mass and the scatterer. The resulting phase noise can be formulated as:
 \begin{eqnarray}
-      h_{scat} & = & \frac{{\lambda}}{4{\pi}L}A\sin({\phi}) \label{eq:1}
+      h_{ph}(f) & = & A\frac{{\lambda}}{8{\pi}L}\mathcal{F}\left[\sin{\delta{\phi}}\right] \label{eq:1}
 \end{eqnarray}
 
 \begin{eqnarray}
     {\phi}(t) & = & \frac{4{\pi}}{{\lambda}}\left|{ x_{0} + {\delta} x_{sc}(t)}\right| \label{eq:2}
 \end{eqnarray}
     
-${\lambda}$ is the laser wavelength and  $\delta x_{sc}$ is the time-dependent displacement of the scattering surface which is added to the static path $x_{0}$~\cite{scatvirgo}. 
+${\lambda}$ is the laser wavelength and  $\delta x_{sc}$ is the time-dependent displacement of the scattering surface which is added to the static path $x_{0}$~\cite{scatvirgo}, $L$ is the length of arms (4 kms), $\mathcal{F}$ is the Fourier transform of the scatterer motion \cite{vaj_scat}. 
 \par
+The build up of this phase shifted field in the arms by the factor ${\Gamma}$ pushes on the mirrors resulting in radiation pressure noise. This radiation component can be expressed as:
 
+%The power fluctuations in the arm cavity push on the mirrors resulting in radiation pressure noise. This noise can be written as:
+
+\begin{equation}
+    h_{rad}(f) = A\frac{2{\Gamma P}}{Mc}\frac{2}{\Omega^2 - \omega^2} \mathcal{F}\left[\cos{\delta{\phi}}\right] \label{rad_eqn}
+\end{equation}
+${\Gamma}$ is cavity signal gain, $M = 40$ kgs is the mass of mirrors, $P$ is the power in the arms, $c$ is speed of light and ${\Omega}$ is the suspension eigenfrequency.
 \begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{scatindarmlrs1.png}
@@ -430,18 +437,27 @@ Let $E_{0}$ be the field in the arms and $E_{asd}$ is the part of this field bac
 \end{eqnarray}
 
 
-The equivalent strain for this field is:
-\begin{eqnarray}
-     h_{sc} & = & \frac{A{\lambda}}{4{\pi}L}\sin{\delta}{\phi}  \label{eq:7}
-\end{eqnarray}
+% The equivalent phase and radiation pressure noise for this field is:
+% \begin{eqnarray}
+%      h_{ph} & = & \frac{{\lambda}}{4{\pi}L}A\sin{\delta}{\phi}, \quad h_{rad} = \frac{2{\Gamma P}}{Mc}\frac{2}{\Omega^2 - \omega^2} A\cos{\delta}{\phi} \label{eq:7}
+% \end{eqnarray}
    
 
-And the effect on sensitivity can now be written as:
+% And the effect on sensitivity can now be written as:
+% \begin{eqnarray}
+%      h_{ph}(f) = \frac{\lambda T_{end}\sqrt{f_{r}}}{8{\pi}L}\mathcal{F}\left[\sin\left(\frac{4{\pi}}{\lambda}{\delta x_{sc}(t)}\right)\right]  \label{eq:8} \\
+%      h_{rad}(f) = \frac{4{\Gamma P}}{Mc}\frac{T_{end}\sqrt{f_{r}}}{\Omega^2 - \omega^2}\mathcal{F}\left[\cos\left(\frac{4{\pi}}{\lambda}{\delta x_{sc}(t)}\right)\right]
+% \end{eqnarray}
+
+The total effective displacement power spectrum $S(f)$ can be obtained by adding the phase and radiation contributions:
+
 \begin{equation}
-    h(f) = \frac{\lambda T_{end}\sqrt{f_{r}}}{8{\pi}L}\mathcal{F}\left[\sin\left(\frac{4{\pi}}{\lambda}{\delta x_{sc}(t)}\right)\right]  \label{eq:8}
+S(f) = \sqrt{h_{ph}(f)^2 + h_{rad}(f)^2} \label{total_noise}
 \end{equation}
 
-$T_{end}$ is the ETM amplitude transmission ($4e^{-4}$), L is the length of arms ($4$ kms), $f_{r}$ is the fraction of power reflected back from the scattering surface, and $\mathcal{F}$ is the Fourier transform of the scatterer motion \cite{vaj_scat}.
+
+where, $h_{ph}
+(f)$ and $h_{rad}(f)$ are given by equation \ref{eq:1} and equation \ref{rad_eqn} respectively. $T_{end}$ is the ETM  transmission ($4e^{-6}$), L is the length of arms ($4$ kms), $f_{r}$ is the fraction of power reflected back from the scattering surface, and $\mathcal{F}$ is the Fourier transform of the scatterer motion \cite{vaj_scat}.
 \begin{figure}[h]
 \captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
    \centering
@@ -460,14 +476,14 @@ $T_{end}$ is the ETM amplitude transmission ($4e^{-4}$), L is the length of arms
          
     
     \end{subfigure}
-    \caption{In the first plot, we have overlaid the multiple harmonics of the fringe frequency due to the penultimate (PUM) stage motion onto scattering arches. In the second plot, we have plotted the DARM spectrum and the spectrum calculated from the PUM stage motion using equation \ref{eq:8} with smaller and smaller values for $f_{r}$ as we match higher frequency shelves.}
+    \caption{In the first plot, we have overlaid the multiple harmonics of the fringe frequency due to the penultimate (PUM) stage motion onto scattering arches. In the second plot, we have plotted the DARM spectrum and the spectrum calculated from the PUM stage motion using equation \ref{total_noise} with smaller and smaller values for $f_{r}$ as we match higher frequency shelves.}
     \label{fig:fringespectrum}
     
 \end{figure}
 
-The $\delta x_{sc} $ in equation \ref{eq:8} is the relative displacement between the test mass chain and the reaction chain as measured by the optical sensors on the PUM stage. 
+%The $\delta x_{sc} $ in equation \ref{eq:2} is the relative displacement between the test mass chain and the reaction chain as measured by the optical sensors on the PUM stage. 
 
-The first shelf in the h(t) spectrum in Fig. ~\ref{fig:spectruml2} matches for $\sqrt{f_{r}} = 4e{-4}$, roughly consistent, within an order of magnitude with a previous estimation \cite{hiro_calc}. The coefficient for second and third shelf are $5e{-5}$ and $5e{-6}$ respectively, about an order of magnitude reduction for each higher harmonic. We performed similar analysis for several scattering triggers and did not find significant deviations in the magnitude of these coefficients for each shelf.
+Fig. ~\ref{fig:spectruml2} shows the total power spectrum for a scattering event on Jan 6, 2020. The first shelf in the h(t) spectrum matches for $\sqrt{f_{r}} = 4e{-4}$, roughly consistent, within an order of magnitude with a previous estimation \cite{hiro_calc}. The coefficient for second and third shelf are $5e{-5}$ and $5e{-6}$ respectively, about an order of magnitude reduction for each higher harmonic. We performed similar analysis for several scattering triggers and did not find significant deviations in the magnitude of these coefficients for each shelf.
 \qquad
 
 
