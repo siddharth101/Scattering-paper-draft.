@@ -467,7 +467,7 @@ The build up of this phase shifted field in the arms by the factor ${\Gamma}$ pu
 ${\Gamma}$ $= 13.58$ here is cavity signal gain, M $= 40$ kg is the mass of mirrors, P is the power in the arms, $c$ is speed of light and ${\Omega}$ is the suspension eigenfrequency~\cite{Ottaway:12}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=10cm]{scatindarmlrs1.png}
+    \includegraphics[width=10cm]{scatindarmlrs1.eps}
     \caption{Scattering noise shows up as arches in the time-frequency spectrograms also known as Q-scan of the primary gravitational wave channel as processed by \textbf{gwdetchar-omega}\cite{Chatterji:2004qg,gwdetchar}. The stacked arches suggests a scatter path that involves multiple reflections of stray light between the test mass and the scatterer.}
     \label{fig:scat}
 \end{figure}
@@ -493,14 +493,14 @@ Consequently, we see a lot more scattering arches in O3. An interesting feature 
    \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width= \textwidth]{slow_arch3.png}
+         \includegraphics[width= \textwidth]{slow_arch3.eps}
          \caption{Slow scattering arches.}
          \label{fig:slowscat}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.47\textwidth}
         \centering
-         \includegraphics[width =\textwidth]{ts_sus3.png}
+         \includegraphics[width =\textwidth]{ts_sus3.eps}
          \caption{PUM stage motion during light scattering.}
          \label{fig:timeseriessus}
          
@@ -664,7 +664,7 @@ S(f) = \sqrt{h_{ph}(f)^2 + h_{rad}(f)^2} \label{total_noise}
     \hfill
     \begin{subfigure}[b]{0.44\textwidth}
         \centering
-         \includegraphics[width =\textwidth]{spectrum_l2new3.png}
+         \includegraphics[width =\textwidth]{spectrum_l2new3.eps}
          \caption{PUM stage amplitude spectral density overlaid on h(t) spectrum.}
          \label{fig:spectruml2}
          
@@ -704,14 +704,14 @@ RC tracking was implemented on Jan 7, 2020, at LLO ~\cite{alog_anamaria}. To und
    \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width= \textwidth,height=3.9cm]{snrpreandpost_LLO.png}
+         \includegraphics[width= \textwidth,height=3.9cm]{snrpreandpost_LLO.eps}
          \caption{SNR comparison at LLO.}
          \label{fig:snr_r0LLO}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width =\textwidth,height=3.9cm]{snrpreandpost_LHO.png}
+         \includegraphics[width =\textwidth,height=3.9cm]{snrpreandpost_LHO.eps}
          \caption{SNR comparison  at LHO.}
          \label{fig:snr_r0LHO}
     \end{subfigure}
@@ -804,14 +804,14 @@ We can identify times of transients due to scattered light by looking at the out
 Another way of identifying the potential scattering triggers is by monitoring the motion of OSEMs and then correlating it with the presence of the same triggers in the gravitational wave strain channel. This is accomplished by using an algorithm called - \textbf{gwdetchar-scattering}~\cite{gwdetchar}.  Throughout the detector, OSEMs are used to capture the motion of any components, light can get scattered from. The timeseries data from these sensors is used to find potential site of scattering in the following way. The position measurements taken by the OSEMs is first converted velocity using a savgol filter \cite{2020SciPy} and then to fringe frequency using the following equation \ref{eq:3}.
 The \textbf{gwdetchar-scattering} script then creates segments of the form (startime, endtime) during which the fringe frequency motion in optic crosses a certain frequency threshold. The algorithm then looks for time coincidences between these segments and omicron triggers in h(t) in 10 Hz - 60 Hz frequency band. Efficiency is defined as the percentage of triggers in h(t) channel that falls within these segments while the deadtime is the duration of all the segments for an optic as a percentage of total observing time. An optic is considered to be ``strong'' witness if the ratio of efficiency over deadtime is greater than 2 and ``weak'' if it is less than 2. The script then prepares a webpage, as shown in Fig \ref{fig:summary_optic}, showing the movement of all the optics, the scattering segments of each optic and the information of h(t) triggers captured by these segments \cite{ligo_summary}.  
 
-Another method to identify scattering culprits is to employ an adaptive algorithm based on time varying Empirical Mode Decomposition (tvf EMD) used at Virgo \cite{Longo_2020}. This method which utilizes the non-linear nature of light scattering, finds correlation between the Instantaneous Amplitude (IA) of primary channel and time derivative of potential scatterer's position. A method based on Hilbert Huang transform has also been developed to catch scattering surfaces \cite{Valdes_2017}. The tcf EMD and the Hilbert Huang  methods are based on quantifying time series correlation between the gravitational strain data and potential scattering surface. The \textbf{gwdetchar-scattering} finds time coincidence between moving optical surfaces and trigger data processed by another pipeline (Omicron).
+Another method to identify scattering culprits is to employ an adaptive algorithm based on time varying Empirical Mode Decomposition (tvf EMD) used at Virgo \cite{Longo_2020}. This method which utilizes the non-linear nature of light scattering, finds correlation between the Instantaneous Amplitude (IA) of primary channel and time derivative of potential scatterer's position. A method based on Hilbert Huang transform has also been developed to catch scattering surfaces \cite{Valdes_2017}. The tvf EMD and the Hilbert Huang  methods are based on quantifying time series correlation between the gravitational strain data and potential scattering surface. The \textbf{gwdetchar-scattering} finds time coincidence between moving optical surfaces and trigger data processed by another pipeline (Omicron).
 
 \begin{figure}[h]
 \captionsetup[subfigure]{font=scriptsize,labelfont=scriptsize}
    \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width= 7cm]{scattering_page.png}
+         \includegraphics[width= 7cm]{scattering_page.eps}
          \caption{Optical sensors on scattering summary page.}
          \label{fig:summary_scattering}
     \end{subfigure}
@@ -881,7 +881,7 @@ The time-frequency spectrograms of 57 randomly chosen trigger times from these 1
    \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-         \includegraphics[width= \textwidth]{transmonvetoed.png}
+         \includegraphics[width= \textwidth]{transmonvetoed.eps}
          \caption{}
          \label{fig:transpie}
     \end{subfigure}
