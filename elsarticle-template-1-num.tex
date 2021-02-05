@@ -400,7 +400,7 @@ Noise due to scattered light has been a frequent disturbance in the Advanced LIG
 %\label{S:1}
 
 %Maecenas \cite{Smith:2012qr}% %fermentum \cite{Smith:2013jd}% 
-The LIGO  gravitational-wave observatories located at Hanford, Washington (LHO), and Livingston, Louisiana (LLO) in the USA \cite{2015}, along with the Virgo detector in Cascina, Italy~\cite{Acernese_2014}, and the GEO 600 detector in Germany~\cite{Dooley_2016} are a part of a worldwide network of gravitational-wave detectors. 
+The LIGO  gravitational-wave observatories located at Hanford, Washington (LHO), and Livingston, Louisiana (LLO) in the USA \cite{TheLIGOScientific:2014jea}, along with the Virgo detector in Cascina, Italy~\cite{Acernese_2014}, and the GEO 600 detector in Germany~\cite{Dooley_2016} are a part of a worldwide network of gravitational-wave detectors. 
 A schematic of the LIGO detectors is shown in Fig. \ref{fig:schematic}.
 Each LIGO detector is a dual-recycled Fabry-Perot Michelson interferometer with 4 km arms. The detector acts as a transducer for strain, converting phase shift due to a gravitational wave into a signal that can be measured on a photo-diode. The output signal at the photodetectors is calibrated to an equivalent strain signal h(t) \cite{Abbott_2017,Viets_2018}.
 
@@ -682,15 +682,8 @@ Fig. \ref{fig:spectruml2} shows the total power spectrum for a scattering event 
 
 
 \section{Noise mitigation using suspensions control system} \label{rzero}
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=5cm]{R0trackingdiagram.png}
-%     \caption{A part of the drive from PUM stage is sent to the R0 stage. This decreases the relative motion between the lower stages of main and reaction chain, thereby reducing the scattered light coupling to the main beam in the detector arms.}
-%     \label{fig:r0tracking}
-% \end{figure} 
 
 Scattered light due to the large relative motion between the test mass chain and reaction chain during high ground motion has adversely affected the sensitivity of the detector. 
-%During very high microseism as witnessed on Jan 6, 2020, this relative velocity between the end test mass (ETM) and annular end reaction mass (AERM) can get as high as 25${\mu}$m/s. And for any ${\delta}x \gg {\lambda}$ there is an upconversion of the low-frequency motion of the mirrors which shows up as scattering shelves/arches with the frequency determined by Eq. \ref{eq:3}. In h(t) spectrograms, multiple harmonics of the scattering arches cover the frequency band 10 Hz to 120 Hz due to light reflecting between the ETM and AERM during high microseism as shown in Fig. \ref{fig:fringel2}.
 One way to reduce this noise coupling is by reducing the relative motion between the ETM and AERM while keeping the intended relative motion between the ETM and the input test mass (ITM) in the arm cavity. This can be achieved by sending a part of the drive from the PUM stage and feeding it to the top stage as shown in Fig. \ref{fig:end_station}. This will cause the two chains to move together and hence will reduce the relative motion between them. The reaction chain ``tracks'' the main chain and we call this RC tracking ~\cite{alog_robert}.
 The reduced relative motion effectively decreases the frequency at which scattering creates shelves in $h(t)$ spectrum. 
 
@@ -790,7 +783,7 @@ As mentioned in Sec. \ref{hardware}, the control drive sent to the end test mass
 \par
 Fig. \ref{fig:1265darm} shows a slow scattering arch in the time-frequency representation, after the RC tracking was implemented. The lack of multiple arches suggests that the scattering path does not involve multiple traversals between the test mass and the scatterer. The TMS-ETM scatter mechanism was confirmed experimentally. Low frequency motion was injected at the Y end seismic isolation table, forcing the DARM loop to respond by inducing large motion at the X end test mass and creating a scatter shelf in h(t). The TMS was then fed the same motion, reducing the relative motion in between it and the optic and the h(t) scatter shelf disappeared ~\cite{alogae_tmsx,alogsid_tmsx,Heijningen:2018evm}.
 
- With RC tracking the higher frequency scattering shelves due to ETM-AERM coupling have gone away. Fig. \ref{fig:etm-transmon} compares the scattering shelves in h(t) and X end transmitted light monitor for scattering events before and after RC tracking. The DARM control signal is sent to one test mass and this results in large relative motion between the test mass and its surroundings. One remedy to reduce the ETM-TMS relative motion is to split and apply this control drive at all four test masses forming the LIGO arm cavities. This will reduce the relative motion by a factor of 4. Further reduction can be employed by making the TMS follow the test mass chain like in the test described above and we intend to implement this for the next observing run.
+With RC tracking the higher frequency scattering shelves due to ETM-AERM coupling have gone away. Fig. \ref{fig:etm-transmon} compares the scattering shelves in h(t) and X end transmitted light monitor for scattering events before and after RC tracking. The DARM control signal is sent to one test mass and this results in large relative motion between the test mass and its surroundings. One remedy to reduce the ETM-TMS relative motion is to split and apply this control drive at all four test masses forming the LIGO arm cavities. This will reduce the relative motion by a factor of 4. Further reduction can be employed by making the TMS follow the test mass chain like in the test described above and we intend to implement this for the next observing run.
 
 \par 
 
